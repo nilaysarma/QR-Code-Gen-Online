@@ -11,13 +11,13 @@ def show_image(text):
     return image_binary
 
 def main():
-    st.title("QR Code Generator")
+    st.title("QR Code Generator Online")
     text = st.text_area("Convert text/URL to QR code", placeholder="Enter text/URL")
     
     if 'image_binary' not in st.session_state:
         st.session_state.image_binary = None
     
-    if st.button("Generate", type="primary"):
+    if st.button("Generate", help="Click to generate QR code", type="primary"):
         if text == "":
             st.warning('Enter some text', icon="⚠️")
         else:
